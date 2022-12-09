@@ -3,7 +3,7 @@ import "./InfoCard.scss";
 import { UilPen } from "@iconscout/react-unicons";
 import { useState } from "react";
 import ProfileModal from "../ProfileModal/ProfileModal";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import * as UserApi from "../../api/UserRequest.js";
