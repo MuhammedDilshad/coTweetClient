@@ -152,7 +152,7 @@ const ChatBox = ({ chat, currentUser, setSendMessage, receivedMessage }) => {
           </>
         ) : (
           <span className="chatbox-empty-message">
-            Tap on a chat to start conversation..
+            Tap on a chat to start conversation...
           </span>
         )}
       </div>
