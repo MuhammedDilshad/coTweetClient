@@ -4,6 +4,7 @@ import Comment from "../../img/comment.png";
 import Dot from "../../img/dot.png";
 import Delete from "../../img/delete.jpg";
 import Share from "../../img/share.png";
+import Swal from "sweetalert2";
 import Heart from "../../img/like.png";
 import NotLike from "../../img/notlike.png";
 import { Modal, useMantineTheme } from "@mantine/core";
@@ -47,9 +48,29 @@ const Post = ({ data }) => {
     setModalOpened(true);
   };
 
+  // const handleDelete = (postId) => {
+  //   alert("Do you want to delete this post");
+  //   dispatch(deletePost(postId, user._id));
+  //   setModalOpened(false);
+  // };
+
   const handleDelete = (postId) => {
-    alert("Do you want to delete this post");
-    dispatch(deletePost(postId, user._id));
+    console.log(postId, "");
+
+    Swal.fire({
+      title: "Are you sure?",
+      text: "Do you want to delete this post!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        dispatch(deletePost(postId, user._id));
+        Swal.fire("Deleted!", "Your post has been deleted.", "success");
+      }
+    });
     setModalOpened(false);
   };
 
