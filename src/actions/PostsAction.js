@@ -19,7 +19,7 @@ export const deletePost = (id, userId) => async (dispatch) => {
     const { data } = await PostsApi.deletePost(id, userId);
     console.log(data, "delete action");
     dispatch({ type: "REFRESH" });
-    dispatch({ type: "delete_SUCCESS", data: data });
+    dispatch({ type: "delete_SUCCESS", data: { id } });
   } catch (error) {
     console.log(error);
     dispatch({ type: "delete_FAIL" });

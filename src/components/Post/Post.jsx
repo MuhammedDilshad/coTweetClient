@@ -48,12 +48,6 @@ const Post = ({ data }) => {
     setModalOpened(true);
   };
 
-  // const handleDelete = (postId) => {
-  //   alert("Do you want to delete this post");
-  //   dispatch(deletePost(postId, user._id));
-  //   setModalOpened(false);
-  // };
-
   const handleDelete = (postId) => {
     console.log(postId, "");
 
