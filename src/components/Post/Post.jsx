@@ -12,6 +12,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { addComment, likePost } from "../../api/PostRequest";
 import { deletePost, getTimelinePosts } from "../../actions/PostsAction";
+import { format } from "timeago.js";
 
 const Post = ({ data }) => {
   const { user } = useSelector((state) => state.authReducer.authData);
@@ -145,6 +146,11 @@ const Post = ({ data }) => {
           <b>{data.name}</b>
         </span>
         <span>{data.desc}</span>
+        <div>
+          <span style={{ color: "var(--gray)", fontSize: "12px" }}>
+            {format(data.createdAt)}
+          </span>
+        </div>
       </div>
     </div>
   );
